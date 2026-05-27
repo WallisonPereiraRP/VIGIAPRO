@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+.contact-section {
+  font-family: 'Epilogue', sans-serif;
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+/* --- CARD WRAPPER --- */
+.contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 28px;
+  border: 1px solid #e8ecf0;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  min-height: 500px;
+}
+
+/* --- LEFT: FORM --- */
+.contact-form-side {
+  padding: 52px 48px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #003E7E;
+  margin: 0 0 32px 0;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.contact-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6680A1;
+  letter-spacing: 1px;
+}
+
+.contact-input,
+.contact-textarea {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 14px;
+  color: #3d3d3d;
+  background-color: #ffffff;
+  border: 1.5px solid #dde3ea;
+  border-radius: 12px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  resize: none;
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  color: #b0b8c4;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: #003E7E;
+  box-shadow: 0 0 0 3px rgba(0, 62, 126, 0.08);
+}
+
+.contact-textarea {
+  min-height: 110px;
+}
+
+.contact-submit-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 16px;
+  background-color: #003E7E;
+  color: #ffffff;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contact-submit-btn:hover {
+  background-color: #002b58;
+}
+
+.contact-submit-btn:active {
+  transform: scale(0.99);
+}
+
+/* --- RIGHT: MAP SIDE --- */
+.contact-image-side {
+  position: relative;
+  background-color: #e8ecf0;
+  overflow: hidden;
+  /* Altura explícita obrigatória para o Leaflet renderizar */
+  height: 500px;
+}
+
+.contact-map {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* O leaflet-container precisa de altura explícita — herda do pai */
+.contact-map .leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  font-family: 'Epilogue', sans-serif;
+}
+
+/* Address card — bottom right overlay */
+.contact-address-card {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  max-width: 220px;
+}
+
+.contact-address-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  color: #003E7E;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.contact-address-text {
+  font-size: 13px;
+  color: #555c68;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* --- BUTTON STATES --- */
+.contact-submit-btn--success {
+  background-color: #1a7f4b;
+}
+
+.contact-submit-btn--success:hover {
+  background-color: #166040;
+}
+
+.contact-submit-btn--error {
+  background-color: #b91c1c;
+}
+
+.contact-submit-btn--error:hover {
+  background-color: #991b1b;
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 800px) {
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-image-side {
+    height: 320px;
+  }
+
+  .contact-form-side {
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 26px;
+  }
+}

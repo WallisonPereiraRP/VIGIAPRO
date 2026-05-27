@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+.vigiapro-container {
+  font-family: 'Epilogue', sans-serif;
+  max-width: 96vw;
+  margin: 0 auto;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* --- NAVBAR --- */
+.vigiapro-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 24px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 100;
+}
+
+.vigiapro-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vigiapro-logo-img {
+  width: 60px;
+}
+
+.vigiapro-logo-text {
+  font-weight: 800;
+  color: #003e7e;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: none;
+}
+
+/* --- NAV DESKTOP --- */
+.vigiapro-nav {
+  background-color: #FAFAFF;
+  border-radius: 40px;
+  padding: 6px 70px;
+  box-shadow: 1px 1px 6px #b5b5b5;
+}
+
+.vigiapro-nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+}
+
+.vigiapro-nav-link {
+  display: block;
+  text-decoration: none;
+  color: #555c68;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+.vigiapro-nav-link.active {
+  color: #011E4A;
+  background: #011E4A33;
+  font-weight: 700;
+}
+
+.vigiapro-nav-link:hover:not(.active) {
+  color: #fff;
+  background: #011E4A;
+}
+
+/* --- WHATSAPP BTN --- */
+.vigiapro-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #003e7e;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.vigiapro-whatsapp-btn:hover {
+  background-color: #002b58;
+}
+
+/* --- HAMBURGER BUTTON --- */
+.vigiapro-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 200;
+}
+
+.vigiapro-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #003e7e;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animação X ao abrir */
+.vigiapro-hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.vigiapro-hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.vigiapro-hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- MOBILE MENU DRAWER --- */
+.vigiapro-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(300px, 80vw);
+  height: 100dvh;
+  background-color: #ffffff;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+  z-index: 150;
+  padding: 90px 28px 40px;
+  flex-direction: column;
+  gap: 32px;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.vigiapro-mobile-menu.open {
+  right: 0;
+}
+
+.vigiapro-mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vigiapro-mobile-nav-link {
+  display: block;
+  text-decoration: none;
+  color: #555c68;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.vigiapro-mobile-nav-link:hover,
+.vigiapro-mobile-nav-link.active {
+  color: #003e7e;
+  background-color: #f0f4fa;
+  font-weight: 700;
+}
+
+.vigiapro-whatsapp-btn.drawer {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+/* --- CLOSE BUTTON (drawer) --- */
+.vigiapro-mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #003e7e;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.vigiapro-mobile-close:hover {
+  background-color: #f0f4fa;
+}
+
+/* --- OVERLAY --- */
+.vigiapro-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 140;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* --- HERO SECTION --- */
+.vigiapro-hero {
+  position: relative;
+  border-radius: 40px;
+  overflow: hidden;
+  min-height: 679px;
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(90deg,
+      rgba(255,255,255,1) 0%,
+      rgba(255,255,255,1) 35%,
+      rgba(255,255,255,0.8) 45%,
+      rgba(255,255,255,0) 75%
+    ),
+    url('/src/assets/hero.png') no-repeat center right;
+  background-size: cover;
+}
+
+.vigiapro-hero-content {
+  position: relative;
+  max-width: 550px;
+  padding: 60px;
+  z-index: 2;
+}
+
+.vigiapro-hero-subtitle {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #003e7e;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.vigiapro-hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #3D3D3D;
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
+}
+
+.vigiapro-hero-description {
+  font-size: 18px;
+  color: #777777;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+}
+
+.vigiapro-cta-btn {
+  background-color: #003e7e;
+  color: #ffffff;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.vigiapro-cta-btn:hover {
+  background-color: #002b58;
+}
+
+.vigiapro-cta-btn:active {
+  transform: scale(0.98);
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+/* Tablet / telas médias */
+@media (max-width: 992px) {
+  .vigiapro-nav {
+    padding: 6px 28px;
+  }
+
+  .vigiapro-nav-link {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .vigiapro-hero {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.4) 100%),
+      url('/src/assets/hero.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .vigiapro-hero-content {
+    padding: 40px 28px;
+    text-align: center;
+  }
+
+  .vigiapro-hero-title {
+    font-size: 36px;
+  }
+
+  .vigiapro-cta-btn {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* Oculta nav e whatsapp desktop */
+  .vigiapro-nav {
+    display: none;
+  }
+
+  .vigiapro-navbar {
+    margin-bottom: 0;
+  }
+
+  .vigiapro-hero-title br:first-of-type {
+    display: none;
+  }
+
+  .vigiapro-whatsapp-btn {
+    display: none;
+  }
+
+  .vigiapro-hamburger {
+    display: flex;
+  }
+
+  /* Habilita o drawer */
+  .vigiapro-mobile-menu {
+    display: flex;
+  }
+
+  /* Hero mobile — centralizado */
+  .vigiapro-hero {
+    min-height: 520px;
+    border-radius: 24px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.75) 60%, rgba(255,255,255,0) 100%),
+      url('/src/assets/hero.png') no-repeat center;
+    background-size: cover;
+    justify-content: center;
+  }
+
+  .vigiapro-hero-content {
+    padding: 36px 24px;
+    text-align: center;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vigiapro-hero-title {
+    font-size: 30px;
+  }
+
+  .vigiapro-hero-description {
+    font-size: 15px;
+  }
+
+  .vigiapro-cta-btn {
+    width: 100%;
+    padding: 14px 24px;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 380px) {
+  .vigiapro-hero-title {
+    font-size: 26px;
+  }
+
+  .vigiapro-hero-subtitle {
+    font-size: 12px;
+  }
+}
