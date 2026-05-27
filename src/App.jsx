@@ -5,7 +5,6 @@ import { VigiaProFooter } from './Home/VigiaProFooter'
 import { VigiaProPlans } from './Home/VigiaProPlans'
 import { VigiaProServices } from './Home/VigiaProServices'
 import { VigiaProWhatsAppFloat } from './Home/VigiaProWhatsappFloat'
-// import VigiaProHeader from './Home/Header'
 
 function App() {
 
